@@ -8,23 +8,23 @@ generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/public"
 }
- 
+
 datasource db {
   provider = "postgresql"
-  url      = env("PUBLIC_DATABASE_URL") // es: postgresql://postgres:password@localhost:5432/whistledb_INTENT
+  url      = env("PUBLIC_DATABASE_URL")
 }
- 
+
 enum SubscriptionPlan {
   MENSILE
   SEMESTRALE
   ANNUALE
 }
- 
+
 enum PaymentMethod {
   CARTA
   BONIFICO
 }
- 
+
 enum EmployeeRange {
   DA_0_A_50
   DA_51_A_100
@@ -33,26 +33,26 @@ enum EmployeeRange {
   DA_201_A_250
   OLTRE_250
 }
- 
+
 model Client {
-  id            String          @id @default(cuid())
-  companyName   String          @unique                 // ragione sociale
-  contactEmail  String          @unique                 // email principale
-  status        String          @default("ACTIVE")      // stato iscrizione
+  id            String         @id @default(cuid())
+  companyName   String         @unique // ragione sociale
+  contactEmail  String         @unique // email principale
+  status        String         @default("ACTIVE") // stato iscrizione
   employeeRange EmployeeRange
   subscriptions Subscription[]
-  createdAt     DateTime        @default(now())
-  updatedAt     DateTime        @updatedAt
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
 }
- 
+
 model Subscription {
   id        String           @id @default(cuid())
   clientId  String
   client    Client           @relation(fields: [clientId], references: [id], onDelete: Cascade)
-  amount    Decimal          @db.Decimal(10,2)          // importo in euro
+  amount    Decimal          @db.Decimal(10, 2) // importo in euro
   currency  String           @default("EUR")
   plan      SubscriptionPlan
   method    PaymentMethod
-  status    String           @default("SUCCESS")        // SUCCESS, PENDING, FAILED
+  status    String           @default("SUCCESS") // SUCCESS, PENDING, FAILED
   createdAt DateTime         @default(now())
 }

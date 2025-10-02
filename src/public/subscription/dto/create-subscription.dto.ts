@@ -2,7 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
 import { SubscriptionPlan, PaymentMethod } from '../../../generated/public';
 
-
 export class CreateSubscriptionDto {
   @ApiProperty()
   @IsString()
@@ -30,4 +29,3 @@ export class CreateSubscriptionDto {
   @IsString()
   status?: string;
 }
- 

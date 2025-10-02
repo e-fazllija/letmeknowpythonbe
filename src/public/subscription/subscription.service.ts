@@ -27,4 +27,3 @@ export class SubscriptionService {
     return this.prisma.subscription.delete({ where: { id } });
   }
 }
- 

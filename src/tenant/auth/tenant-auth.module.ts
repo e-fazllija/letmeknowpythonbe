@@ -8,5 +8,3 @@ import { PrismaTenantService } from '../prisma-tenant.service';
   providers: [TenantAuthService, PrismaTenantService],
 })
 export class TenantAuthModule {}
-
- 

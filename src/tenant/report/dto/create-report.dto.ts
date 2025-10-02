@@ -2,7 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsOptional, IsString } from 'class-validator';
 import { ReportStatus, ReportChannel } from '../../../generated/tenant';
 
-
 export class CreateReportDto {
   @ApiProperty()
   @IsString()
@@ -27,4 +26,3 @@ export class CreateReportDto {
   @IsEnum(ReportChannel)
   channel?: ReportChannel;
 }
- 

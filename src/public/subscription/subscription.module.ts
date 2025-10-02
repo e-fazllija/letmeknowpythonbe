@@ -8,4 +8,3 @@ import { PrismaPublicService } from '../prisma-public.service';
   providers: [SubscriptionService, PrismaPublicService],
 })
 export class SubscriptionModule {}
- 

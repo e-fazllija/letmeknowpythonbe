@@ -12,14 +12,13 @@ async function bootstrap() {
   // Prefix globale (opzionale)
   app.setGlobalPrefix('v1');
 
-  // Validazione globale + trasformazione tipi (enum inclusi)
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true,                 // rimuove campi extra
-      forbidNonWhitelisted: false,     // se vuoi, metti true per 400 su campi sconosciuti
-      transform: true,                 // abilita class-transformer
+      whitelist: true,
+      forbidNonWhitelisted: false,
+      transform: true,
       transformOptions: {
-        enableImplicitConversion: true // conversioni base (string->number ecc.)
+        enableImplicitConversion: true,
       },
     }),
   );

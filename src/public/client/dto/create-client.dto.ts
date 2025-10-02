@@ -13,5 +13,5 @@ export class CreateClientDto {
 
   @ApiProperty({ enum: EmployeeRange, enumName: 'EmployeeRange' })
   @IsEnum(EmployeeRange)
-  employeeRange!: EmployeeRange; 
+  employeeRange!: EmployeeRange;
 }

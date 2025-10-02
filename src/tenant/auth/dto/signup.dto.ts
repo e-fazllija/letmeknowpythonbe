@@ -18,4 +18,3 @@ export class SignupDto {
   @IsString()
   role!: string;
 }
- 

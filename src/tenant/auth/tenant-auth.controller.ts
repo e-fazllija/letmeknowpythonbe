@@ -19,4 +19,3 @@ export class TenantAuthController {
     return this.service.login(dto);
   }
 }
- 

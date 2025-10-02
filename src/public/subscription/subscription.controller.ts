@@ -28,4 +28,3 @@ export class SubscriptionController {
     return this.service.remove(id);
   }
 }
- 

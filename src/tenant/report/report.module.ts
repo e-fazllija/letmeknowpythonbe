@@ -8,4 +8,3 @@ import { PrismaTenantService } from '../prisma-tenant.service';
   providers: [ReportService, PrismaTenantService],
 })
 export class ReportModule {}
- 

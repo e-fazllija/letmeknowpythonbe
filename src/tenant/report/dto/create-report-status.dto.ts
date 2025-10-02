@@ -2,7 +2,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsEnum, IsOptional, IsString } from 'class-validator';
 import { ReportStatus } from '../../../generated/tenant';
 
-
 export class CreateReportStatusDto {
   @ApiProperty()
   @IsString()
@@ -28,4 +27,3 @@ export class CreateReportStatusDto {
   @IsEnum(ReportStatus)
   status!: ReportStatus;
 }
- 

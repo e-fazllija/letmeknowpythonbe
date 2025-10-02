@@ -40,4 +40,3 @@ export class ReportController {
     return this.service.listStatus(reportId);
   }
 }
- 

@@ -45,4 +45,3 @@ export class ReportService {
     return this.prisma.reportStatusHistory.findMany({ where: { reportId } });
   }
 }
- 

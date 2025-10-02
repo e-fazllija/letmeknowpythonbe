@@ -6,7 +6,6 @@ import { PrismaPublicService } from '../prisma-public.service';
 @Module({
   controllers: [ClientController],
   providers: [ClientService, PrismaPublicService],
-  exports:[ClientService]
+  exports: [ClientService],
 })
 export class ClientModule {}
- 

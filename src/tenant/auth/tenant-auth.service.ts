@@ -33,4 +33,3 @@ export class TenantAuthService {
     return { message: 'Login successful', userId: user.id, role: user.role };
   }
 }
- 

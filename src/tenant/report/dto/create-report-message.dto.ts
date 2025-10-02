@@ -18,4 +18,3 @@ export class CreateReportMessageDto {
   @IsString()
   body!: string;
 }
- 
