@@ -17,11 +17,11 @@ DOWNLOAD_FOLDER.mkdir(parents=True, exist_ok=True)
 def load_whisper_model(model_name: str):
     """
     Carica il modello Whisper specificato.
-    Se il modello non è valido, utilizza 'turbo' come default.
+    Se il modello non è valido, utilizza 'large' come default.
     """
     if model_name not in valid_models:
-        print("Modello non valido. Verrà utilizzato il modello 'turbo' di default.")
-        model_name = "turbo"
+        print("Modello non valido. Verrà utilizzato il modello 'large' di default.")
+        model_name = "large"
     model = whisper.load_model(model_name, device=device, download_root=str(DOWNLOAD_FOLDER))
     return model
 
