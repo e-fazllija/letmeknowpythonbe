@@ -11,5 +11,5 @@ api = Api(app,
 # Registra il namespace per la trascrizione
 api.add_namespace(transcribe_ns, path='/transcribe')
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     app.run(debug=True, host='127.0.0.1', port=5097)
